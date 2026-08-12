@@ -2,7 +2,7 @@ import { IconMenu2, IconX } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { Logo } from '@/components/shared/logo';
-import { ThemeSwitcher } from '@/components/theme/theme-switcher';
+import { ThemeSwitcher } from '@/components/layout/theme-switcher';
 import { Button } from '@/components/ui/button';
 import { ButtonLink, Container } from '@/components/ui/primitives';
 import { websiteConfig } from '@/config/website';
