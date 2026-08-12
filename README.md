@@ -1,13 +1,13 @@
 # MkFast Lite
 
-A minimal bilingual website starter built with React 19, TanStack Start,
+A bilingual starter for a simple website, built with React 19, TanStack Start,
 Tailwind CSS, Paraglide, and Cloudflare Workers.
 
-MkFast Lite starts with one complete public landing page instead of a SaaS
-application. It includes responsive design, light and dark themes, English and
-Simplified Chinese, SEO endpoints, tests, and Workers deployment. It does not
-include authentication, payments, a database, storage, cache, email,
-newsletter, or an admin area.
+MkFast Lite gives you a complete landing page without the operational weight of
+a SaaS starter. It includes responsive navigation, English and Simplified
+Chinese routes, light/dark/system themes, SEO endpoints, tests, and Cloudflare
+Workers deployment. It intentionally leaves out accounts, payments, persistence,
+storage, cache, email, newsletters, and admin surfaces.
 
 ## Start
 
@@ -16,18 +16,24 @@ pnpm install
 pnpm dev
 ```
 
-Open `http://localhost:3000` for English or `/zh` for Simplified Chinese.
+Open `http://localhost:3000` for English or `http://localhost:3000/zh` for
+Simplified Chinese. The header includes language and theme menus; the selected
+theme is kept in local storage.
 
 ## Make it yours
 
-1. Update product identity and public links in `src/config/website.ts`.
-2. Replace the English and Chinese copy in `project.inlang/messages/`.
-3. Replace the original assets in `public/`.
-4. Reorder or remove independent sections in
-   `src/components/home/home-page.tsx`.
+1. Set the site name, repository, template URL, and navigation in
+   `src/config/website.ts`.
+2. Write the English and Simplified Chinese copy in
+   `project.inlang/messages/en.json` and `project.inlang/messages/zh.json`.
+3. Replace the assets in `public/`.
+4. Reorder or remove landing-page sections in
+   `src/components/home/home-page.tsx`, then connect a custom domain when the
+   site is ready.
 
-Locale JSON is the source of truth. Regenerate the typed messages after copy
-changes:
+The two locale JSON files are the source of truth. Do not edit
+`src/locale/paraglide/` by hand; regenerate its typed runtime after changing
+copy:
 
 ```bash
 pnpm locale:compile
@@ -37,20 +43,25 @@ pnpm locale:check
 ## Add a page
 
 Add a file under `src/routes/` using TanStack Router's file-route convention.
-If the page should exist in both languages, add an English route and a `/zh`
-route, then include canonical and alternate locale metadata.
+For a bilingual page, create English and `/zh` routes, add canonical and
+alternate-language metadata, and add matching messages to both locale files.
+
+The default public surface is `/` and `/zh`, plus `/robots.txt`,
+`/sitemap.xml`, and `/manifest.webmanifest`. Application routes such as login,
+pricing, dashboard, and admin intentionally return 404 until you choose to add
+them.
 
 ## Quality checks
 
 ```bash
-pnpm check
-pnpm build
-pnpm e2e
+pnpm check  # formatting, locale parity, unit tests, and TypeScript
+pnpm build  # production build plus TypeScript
+pnpm e2e    # desktop and mobile browser coverage
 ```
 
-The checks cover formatting, linting, locale parity, unit contracts,
-TypeScript, production SSR output, both locales, themes, responsive navigation,
-SEO, and the intentionally missing application routes.
+`pnpm e2e` covers both locales, language switching, theme persistence,
+responsive navigation, FAQ behavior, SEO endpoints, and intentionally missing
+application routes.
 
 ## Deploy to Cloudflare Workers
 
@@ -61,9 +72,9 @@ pnpm exec wrangler login
 pnpm deploy
 ```
 
-The default `wrangler.jsonc` keeps `workers_dev` enabled and has no resource
-bindings or application secrets. The first deployment publishes to your
-Cloudflare account's `workers.dev` subdomain.
+The committed `wrangler.jsonc` keeps `workers_dev` enabled and contains no
+resource bindings or application secrets. The first deployment publishes to
+your Cloudflare account's `workers.dev` subdomain.
 
 To attach your own hostname without making it the template default:
 
@@ -76,12 +87,14 @@ created from this template.
 
 ## Project map
 
-- `src/routes/` — pages and machine-readable endpoints.
-- `src/components/` — layout, theme, UI primitives, and landing sections.
-- `src/config/` — small product-owned site configuration.
-- `src/lib/` — locale, SEO, and utility contracts.
-- `project.inlang/messages/` — authoritative bilingual copy.
-- `tests/` — unit and Playwright acceptance tests.
+- `src/routes/` — pages, 404 handling, and machine-readable endpoints.
+- `src/components/` — layout, language/theme controls, UI primitives, and
+  landing-page sections.
+- `src/config/` — product-owned site identity, links, and navigation.
+- `src/lib/` — locale routing, SEO, and utility contracts.
+- `project.inlang/messages/` — authoritative English and Simplified Chinese
+  copy.
+- `tests/` — unit contracts and Playwright acceptance tests.
 
 ## License
 

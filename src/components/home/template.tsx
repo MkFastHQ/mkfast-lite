@@ -15,7 +15,7 @@ export function Template({ locale }: { locale: AppLocale }) {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
-            <h2 className="text-balance text-4xl font-black leading-[1.02] tracking-[-0.03em] sm:text-5xl">
+            <h2 className="text-balance text-4xl font-black leading-[1.1] tracking-[-0.03em] sm:text-5xl">
               {message('template_title', locale)}
             </h2>
             <p className="mt-6 max-w-[65ch] text-lg leading-8 text-ink/75">
@@ -47,7 +47,7 @@ export function Template({ locale }: { locale: AppLocale }) {
             </ol>
           </div>
           <BrutalCard className="self-center bg-paper text-ink lg:rotate-[1.5deg]">
-            <Tag className="bg-lavender">
+            <Tag className="!bg-green">
               {message('template_repo_label', locale)}
             </Tag>
             <div className="mt-8 border-y-2 border-ink py-7">
@@ -58,16 +58,17 @@ export function Template({ locale }: { locale: AppLocale }) {
                 {message('template_repo_title', locale)}
               </h3>
               <p className="mt-4 max-w-[42ch] leading-7 text-ink/70">
-                {message('template_repo_detail', locale)}
+                {message('hero_title_a', locale)}{' '}
+                {message('hero_title_b', locale)}
               </p>
             </div>
             <ButtonLink
-              href={websiteConfig.template}
+              href={websiteConfig.repository}
               className="mt-7 w-full"
               target="_blank"
               rel="noreferrer"
             >
-              {message('template_repo_action', locale)}
+              {message('github_action', locale)}
               <IconArrowRight aria-hidden="true" />
             </ButtonLink>
           </BrutalCard>

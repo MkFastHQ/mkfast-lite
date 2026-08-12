@@ -1,7 +1,9 @@
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { Logo } from '@/components/shared/logo';
 import { ThemeSwitcher } from '@/components/theme/theme-switcher';
+import { Button } from '@/components/ui/button';
 import { ButtonLink, Container } from '@/components/ui/primitives';
 import { websiteConfig } from '@/config/website';
 import { type AppLocale, localizedPath, message } from '@/lib/locale';
@@ -18,9 +20,12 @@ export function Header({ locale }: { locale: AppLocale }) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-ink bg-background/95 backdrop-blur-[8px]">
+    <header className="sticky top-0 z-50 border-b border-ink/20 bg-background/95 backdrop-blur-[8px]">
       <Container>
-        <nav aria-label="Primary" className="flex min-h-18 items-center gap-5">
+        <nav
+          aria-label={message('nav_primary', locale)}
+          className="flex min-h-18 items-center gap-5"
+        >
           <a
             href={localizedPath(locale)}
             className="flex shrink-0 items-center gap-2 no-underline"
@@ -45,27 +50,21 @@ export function Header({ locale }: { locale: AppLocale }) {
           </div>
 
           <div className="ml-auto flex items-center gap-2 lg:ml-3">
-            <a
-              href={localizedPath(locale === 'en' ? 'zh' : 'en')}
-              className="inline-flex size-11 items-center justify-center rounded-lg border-2 border-ink bg-cyan text-sm font-black text-ink no-underline shadow-brutal-xs focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus"
-              aria-label={message('language_label', locale)}
-            >
-              {locale === 'en' ? '中' : 'EN'}
-            </a>
+            <LanguageSwitcher locale={locale} />
             <ThemeSwitcher locale={locale} />
             <span className="hidden sm:block">
               <ButtonLink
-                href={websiteConfig.template}
+                href={websiteConfig.repository}
                 target="_blank"
                 rel="noreferrer"
               >
-                {message('nav_use_template', locale)}
+                {message('github_action', locale)}
               </ButtonLink>
             </span>
-            <button
-              type="button"
+            <Button
               disabled={!ready}
-              className="inline-flex size-11 items-center justify-center rounded-lg border-2 border-ink bg-yellow text-ink shadow-brutal-xs focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus lg:hidden"
+              variant="icon"
+              className="bg-yellow text-ink hover:bg-yellow-soft lg:hidden"
               onClick={() => setOpen((value) => !value)}
               aria-expanded={open}
               aria-controls="mobile-navigation"
@@ -79,14 +78,14 @@ export function Header({ locale }: { locale: AppLocale }) {
               ) : (
                 <IconMenu2 aria-hidden="true" />
               )}
-            </button>
+            </Button>
           </div>
         </nav>
 
         {open && (
           <div
             id="mobile-navigation"
-            className="grid gap-2 border-t-2 border-ink py-4 lg:hidden"
+            className="grid gap-2 border-t border-ink/20 py-4 lg:hidden"
           >
             {websiteConfig.navigation.map((item) => (
               <a
@@ -98,12 +97,12 @@ export function Header({ locale }: { locale: AppLocale }) {
               </a>
             ))}
             <ButtonLink
-              href={websiteConfig.template}
+              href={websiteConfig.repository}
               className="mt-2 sm:hidden"
               target="_blank"
               rel="noreferrer"
             >
-              {message('nav_use_template', locale)}
+              {message('github_action', locale)}
             </ButtonLink>
           </div>
         )}

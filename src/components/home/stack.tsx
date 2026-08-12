@@ -10,19 +10,19 @@ import { type AppLocale, message } from '@/lib/locale';
 const technologies = [
   ['react', IconBrandReact, 'bg-cyan'],
   ['tanstack', IconStack2, 'bg-orange'],
-  ['i18n', IconLanguage, 'bg-lavender'],
+  ['i18n', IconLanguage, 'bg-green'],
   ['cloudflare', IconBrandCloudflare, 'bg-yellow'],
 ] as const;
 
 export function Stack({ locale }: { locale: AppLocale }) {
   return (
-    <Section id="stack">
+    <Section id="stack" className="bg-lavender text-ink">
       <Container>
         <div className="max-w-3xl">
-          <h2 className="text-balance text-4xl font-black leading-[1.02] tracking-[-0.03em] sm:text-5xl">
+          <h2 className="text-balance text-4xl font-black leading-[1.1] tracking-[-0.03em] sm:text-5xl">
             {message('stack_title', locale)}
           </h2>
-          <p className="mt-6 max-w-[65ch] text-lg leading-8 text-muted-foreground">
+          <p className="mt-6 max-w-[65ch] text-lg leading-8 text-ink/75">
             {message('stack_description', locale)}
           </p>
         </div>

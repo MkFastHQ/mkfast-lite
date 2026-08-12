@@ -2,26 +2,21 @@ import { cn } from '@/lib/utils';
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <svg
+    <span
       aria-hidden="true"
-      className={cn('size-9', className)}
-      viewBox="0 0 48 48"
-      fill="none"
+      className={cn(
+        'inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-ink bg-orange text-ink shadow-brutal-xs',
+        className
+      )}
     >
-      <rect
-        x="3"
-        y="3"
-        width="42"
-        height="42"
-        rx="8"
-        className="fill-yellow stroke-ink"
-        strokeWidth="3"
-      />
-      <path
-        d="M11 34V14h7l6 8 6-8h7v20h-7V24l-6 8-6-8v10h-7Z"
-        className="fill-ink"
-      />
-      <path d="M35 7h7v7" className="stroke-orange" strokeWidth="3" />
-    </svg>
+      <svg
+        aria-hidden="true"
+        className="size-6"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path d="M14.5 2.5 6.5 13h5l-2 8.5 8-11h-5l2-8Z" fill="currentColor" />
+      </svg>
+    </span>
   );
 }

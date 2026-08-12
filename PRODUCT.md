@@ -19,10 +19,11 @@ need.
 
 ## Product Purpose
 
-MkFast Lite is a minimal web starter for a small public website. It provides a
-complete bilingual landing page, responsive navigation, light and dark themes,
-SEO fundamentals, tests, and Cloudflare Workers deployment without accounts,
-payments, databases, storage, cache, email, newsletters, or admin surfaces.
+MkFast Lite is a minimal web starter for a small simple website. It provides a
+complete bilingual landing page, responsive navigation, language and theme
+menus, light/dark/system themes, SEO fundamentals, tests, and Cloudflare
+Workers deployment without accounts, payments, databases, storage, cache,
+email, newsletters, or admin surfaces.
 
 Success means a developer can create a repository from the template, replace
 the central site configuration and locale copy, and deploy a polished site in
@@ -30,9 +31,9 @@ one short work session.
 
 ## Positioning
 
-MkFast Lite keeps the production-quality public-site foundation of a modern
+MkFast Lite keeps the production-quality simple-site foundation of a modern
 React starter while deliberately excluding the operational surface of a SaaS
-application. Its mechanism is subtraction: one public experience, one small
+application. Its mechanism is subtraction: one simple experience, one small
 configuration surface, and no unused service bindings.
 
 ## Capabilities and Constraints
@@ -40,7 +41,8 @@ configuration surface, and no unused service bindings.
 - Human-facing routes are `/` in English and `/zh` in Simplified Chinese.
 - The site supports light, dark, and system themes.
 - The landing page includes navigation, product positioning, capabilities,
-  stack, included and excluded scope, a three-step workflow, FAQ, and CTA.
+  stack, included and excluded scope, a four-step customization workflow, FAQ,
+  and CTA.
 - SEO includes canonical and alternate locale links, social metadata,
   structured data, sitemap, robots, and a web manifest.
 - The default deployment uses the account's `workers.dev` subdomain.

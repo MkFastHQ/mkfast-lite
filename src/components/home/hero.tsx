@@ -1,5 +1,4 @@
 import {
-  IconArrowDown,
   IconArrowRight,
   IconBrandCloudflare,
   IconCheck,
@@ -19,12 +18,12 @@ export function Hero({ locale }: { locale: AppLocale }) {
   );
 
   return (
-    <section className="overflow-hidden pb-20 pt-12 sm:pb-28 sm:pt-18">
-      <Container>
+    <section className="flex min-h-[calc(100vh-4.625rem)] min-h-[calc(100dvh-4.625rem)] items-center overflow-hidden pb-20 pt-12 sm:pb-28 sm:pt-18">
+      <Container className="w-full">
         <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
           <div>
             <Tag>{message('hero_badge', locale)}</Tag>
-            <h1 className="mt-7 max-w-[780px] text-balance text-[clamp(3.5rem,8vw,6rem)] font-black leading-[0.91] tracking-[-0.035em]">
+            <h1 className="mt-7 max-w-[780px] text-balance text-[clamp(3.5rem,8vw,6rem)] font-black leading-[1.06] tracking-[-0.035em]">
               {message('hero_title_a', locale)}{' '}
               <span className="text-orange">
                 {message('hero_title_b', locale)}
@@ -33,21 +32,17 @@ export function Hero({ locale }: { locale: AppLocale }) {
             <p className="mt-7 max-w-[66ch] text-lg leading-8 text-muted-foreground sm:text-xl">
               {message('hero_description', locale)}
             </p>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <ButtonLink
-                href={websiteConfig.template}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {message('hero_primary', locale)}
-                <IconArrowRight aria-hidden="true" className="size-5" />
-              </ButtonLink>
-              <ButtonLink href="#foundation" variant="plain">
-                {message('hero_secondary', locale)}
-                <IconArrowDown aria-hidden="true" className="size-5" />
-              </ButtonLink>
-            </div>
-            <p className="mt-6 text-sm font-bold text-muted-foreground">
+            <ButtonLink
+              variant="plain"
+              className="mt-9 hover:bg-cyan dark:bg-paper dark:text-ink dark:hover:bg-cyan"
+              href={websiteConfig.repository}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {message('github_action', locale)}
+              <IconArrowRight aria-hidden="true" className="size-5" />
+            </ButtonLink>
+            <p className="mt-10 text-sm font-bold text-muted-foreground">
               {message('hero_note', locale)}
             </p>
           </div>
@@ -62,19 +57,25 @@ export function Hero({ locale }: { locale: AppLocale }) {
               aria-hidden="true"
             />
             <BrutalCard className="relative bg-yellow p-0">
-              <div className="flex items-center justify-between border-b-2 border-ink px-5 py-4">
-                <span className="font-black">
+              <div className="flex items-center justify-between px-0 py-4">
+                <span
+                  data-slot="hero-board-title"
+                  className="font-black text-ink"
+                >
                   {message('hero_board_title', locale)}
                 </span>
                 <span className="rounded-full border-2 border-ink bg-green px-3 py-1 text-xs font-black uppercase text-ink">
                   {message('hero_board_status', locale)}
                 </span>
               </div>
-              <div className="grid gap-3 bg-surface p-5 sm:p-7">
+              <div
+                data-slot="hero-board-content"
+                className="grid gap-3 border-2 border-ink bg-paper p-5 sm:p-7"
+              >
                 {items.map((item, index) => (
                   <div
                     key={item}
-                    className="flex items-center gap-4 rounded-[10px] border-2 border-ink bg-background p-4 shadow-brutal-xs"
+                    className="flex items-center gap-4 rounded-[10px] border-2 border-ink bg-paper p-4 text-ink shadow-brutal-xs"
                   >
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-cyan font-black text-ink">
                       {index + 1}
@@ -82,13 +83,16 @@ export function Hero({ locale }: { locale: AppLocale }) {
                     <span className="font-bold">{item}</span>
                     <IconCheck
                       aria-hidden="true"
-                      className="ml-auto size-5 text-positive"
+                      className="ml-auto size-5 text-ink"
                       stroke={3}
                     />
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-3 border-t-2 border-ink bg-orange px-5 py-4 text-sm font-black text-ink">
+              <div
+                data-slot="hero-board-deploy"
+                className="mt-4 flex items-center gap-3 rounded-[10px] border-2 border-ink bg-orange px-5 py-4 text-sm font-black text-ink shadow-brutal-xs"
+              >
                 <IconBrandCloudflare aria-hidden="true" />
                 <span>pnpm deploy</span>
                 <span className="ml-auto">→ workers.dev</span>

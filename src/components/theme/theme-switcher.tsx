@@ -1,5 +1,13 @@
-import { IconMoon, IconSun, IconSunMoon } from '@tabler/icons-react';
+import { IconDeviceDesktop, IconMoon, IconSun } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { Button, buttonVariants } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { type AppLocale, message } from '@/lib/locale';
 
 type Theme = 'light' | 'dark' | 'system';
@@ -7,7 +15,7 @@ type Theme = 'light' | 'dark' | 'system';
 const themes: Array<{ value: Theme; Icon: typeof IconSun }> = [
   { value: 'light', Icon: IconSun },
   { value: 'dark', Icon: IconMoon },
-  { value: 'system', Icon: IconSunMoon },
+  { value: 'system', Icon: IconDeviceDesktop },
 ];
 
 function applyTheme(theme: Theme) {
@@ -34,14 +42,14 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
     setReady(true);
 
     const media = window.matchMedia('(prefers-color-scheme: dark)');
-    const sync = () => initial === 'system' && applyTheme('system');
+    const sync = () =>
+      document.documentElement.dataset.theme === 'system' &&
+      applyTheme('system');
     media.addEventListener('change', sync);
     return () => media.removeEventListener('change', sync);
   }, []);
 
-  function cycleTheme() {
-    const index = themes.findIndex((item) => item.value === theme);
-    const next = themes[(index + 1) % themes.length].value;
+  function selectTheme(next: Theme) {
     setTheme(next);
     localStorage.setItem('mkfast-lite-theme', next);
     applyTheme(next);
@@ -49,17 +57,48 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
 
   const active = themes.find((item) => item.value === theme) ?? themes[2];
   const label = message(`theme_${theme}` as 'theme_system', locale);
+  const controlLabel = `${message('theme_label', locale)}: ${label}`;
+
+  if (!ready) {
+    return (
+      <Button
+        variant="icon"
+        disabled
+        className="disabled:cursor-wait"
+        aria-label={controlLabel}
+        title={controlLabel}
+      >
+        <active.Icon aria-hidden="true" className="size-5" stroke={2.4} />
+      </Button>
+    );
+  }
 
   return (
-    <button
-      type="button"
-      onClick={cycleTheme}
-      disabled={!ready}
-      className="inline-flex size-11 items-center justify-center rounded-lg border-2 border-ink bg-surface text-foreground shadow-brutal-xs transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus active:translate-y-0 disabled:cursor-wait disabled:opacity-70"
-      aria-label={`${message('theme_label', locale)}: ${label}`}
-      title={`${message('theme_label', locale)}: ${label}`}
-    >
-      <active.Icon aria-hidden="true" className="size-5" stroke={2.4} />
-    </button>
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        className={buttonVariants({
+          variant: 'icon',
+          className:
+            'data-[popup-open]:translate-y-0 data-[popup-open]:shadow-none disabled:cursor-wait',
+        })}
+        aria-label={controlLabel}
+        title={controlLabel}
+      >
+        <active.Icon aria-hidden="true" className="size-5" stroke={2.4} />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent aria-label={message('theme_label', locale)}>
+        <DropdownMenuRadioGroup
+          value={theme}
+          onValueChange={(next) => selectTheme(next as Theme)}
+        >
+          {themes.map(({ value, Icon }) => (
+            <DropdownMenuRadioItem key={value} value={value}>
+              <Icon aria-hidden="true" className="size-4" stroke={2.4} />
+              {message(`theme_${value}` as 'theme_system', locale)}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { type ButtonVariant, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export function Container({
@@ -19,7 +20,7 @@ export function Section({
 }: ComponentPropsWithoutRef<'section'>) {
   return (
     <section
-      className={cn('border-t-2 border-ink py-20 sm:py-28', className)}
+      className={cn('border-t border-ink/15 py-20 sm:py-28', className)}
       {...props}
     />
   );
@@ -32,19 +33,10 @@ export function ButtonLink({
   ...props
 }: ComponentPropsWithoutRef<'a'> & {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'plain';
+  variant?: Exclude<ButtonVariant, 'icon'>;
 }) {
   return (
-    <a
-      className={cn(
-        'inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] border-2 border-ink px-5 py-2.5 text-base font-extrabold no-underline shadow-brutal transition-[transform,box-shadow,background-color] duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus active:translate-x-1 active:translate-y-1 active:shadow-none',
-        variant === 'primary' && 'bg-orange text-ink hover:bg-orange-strong',
-        variant === 'secondary' && 'bg-yellow text-ink hover:bg-yellow-soft',
-        variant === 'plain' && 'bg-surface text-foreground hover:bg-muted',
-        className
-      )}
-      {...props}
-    >
+    <a className={buttonVariants({ className, variant })} {...props}>
       {children}
     </a>
   );

@@ -1,22 +1,30 @@
 import {
+  IconCloudUpload,
   IconLanguage,
   IconLayout,
   IconMoonStars,
   IconSearch,
-  IconServerOff,
+  IconTestPipe,
   IconX,
 } from '@tabler/icons-react';
 import { BrutalCard, Container, Section } from '@/components/ui/primitives';
 import { type AppLocale, message } from '@/lib/locale';
 
-const includedIcons = [IconLayout, IconLanguage, IconMoonStars, IconSearch];
-const excludedIcons = [IconServerOff, IconX, IconX, IconX];
+const includedIcons = [
+  IconLayout,
+  IconLanguage,
+  IconMoonStars,
+  IconSearch,
+  IconTestPipe,
+  IconCloudUpload,
+];
+const excludedIcons = [IconX, IconX, IconX, IconX, IconX, IconX];
 
 export function Foundation({ locale }: { locale: AppLocale }) {
-  const included = [1, 2, 3, 4].map((index) =>
+  const included = [1, 2, 3, 4, 5, 6].map((index) =>
     message(`foundation_keep_${index}` as 'foundation_keep_1', locale)
   );
-  const excluded = [1, 2, 3, 4].map((index) =>
+  const excluded = [1, 2, 3, 4, 5, 6].map((index) =>
     message(`foundation_remove_${index}` as 'foundation_remove_1', locale)
   );
 
@@ -25,7 +33,7 @@ export function Foundation({ locale }: { locale: AppLocale }) {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
-            <h2 className="text-balance text-4xl font-black leading-[1.02] tracking-[-0.03em] sm:text-5xl">
+            <h2 className="text-balance text-4xl font-black leading-[1.1] tracking-[-0.03em] sm:text-5xl">
               {message('foundation_title', locale)}
             </h2>
             <p className="mt-6 max-w-[65ch] text-lg leading-8 text-ink/75">
@@ -40,7 +48,7 @@ export function Foundation({ locale }: { locale: AppLocale }) {
               <h3 className="text-2xl font-black">
                 {message('foundation_keep_title', locale)}
               </h3>
-              <ul className="mt-6 space-y-5">
+              <ul className="mt-6 space-y-4">
                 {included.map((item, index) => {
                   const Icon = includedIcons[index];
                   return (

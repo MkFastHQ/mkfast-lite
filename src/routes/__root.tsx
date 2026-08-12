@@ -36,7 +36,7 @@ function RootLayout() {
   const pathname = useLocation({ select: (location) => location.pathname });
   const locale = currentLocale(pathname);
   return (
-    <div className="min-h-screen">
+    <div className="isolate min-h-screen">
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg border-2 border-ink bg-yellow px-4 py-2 font-black text-ink shadow-brutal focus:translate-y-0"
@@ -62,18 +62,16 @@ function NotFound() {
         404
       </span>
       <h1 className="mt-6 text-5xl font-black tracking-[-0.03em]">
-        {locale === 'zh' ? '这里没有页面。' : 'There is no page here.'}
+        {message('not_found_title', locale)}
       </h1>
       <p className="mt-4 text-lg text-muted-foreground">
-        {locale === 'zh'
-          ? 'MkFast Lite 默认只提供一个公开落地页。'
-          : 'MkFast Lite ships one public landing page by default.'}
+        {message('not_found_description', locale)}
       </p>
       <a
         className="mt-8 rounded-lg border-2 border-ink bg-yellow px-5 py-3 font-black text-ink shadow-brutal"
         href={locale === 'zh' ? '/zh' : '/'}
       >
-        {locale === 'zh' ? '返回首页' : 'Back home'}
+        {message('not_found_action', locale)}
       </a>
     </main>
   );
@@ -91,7 +89,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {/*
-        THESIS: A complete public-site foundation with every SaaS subsystem visibly absent.
+        THESIS: A complete simple-site foundation with every SaaS subsystem visibly absent.
         OWN-WORLD: Warm workshop paper, ink construction lines, offset color plates, rounded heavy type.
         STORY: Understand the smaller starter, inspect its honest scope, create it, and deploy.
         FIRST VIEWPORT: Asymmetric headline and CTA beside a layered build board that ends at Workers.

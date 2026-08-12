@@ -15,6 +15,6 @@ export function localizedPath(locale: AppLocale, hash = '') {
 }
 
 export const localeMeta = {
-  en: { hreflang: 'en', label: 'EN' },
-  zh: { hreflang: 'zh-CN', label: '中' },
+  en: { hreflang: 'en', label: 'EN', messageKey: 'language_english' },
+  zh: { hreflang: 'zh-CN', label: '中', messageKey: 'language_chinese' },
 } as const;
