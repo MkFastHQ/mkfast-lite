@@ -9,9 +9,7 @@ web
 ## Stack
 
 TypeScript, React 19, TanStack Start and Router, Vite, Tailwind CSS v4,
-Paraglide, and Cloudflare Workers. The project uses pnpm and follows the
-familiar MkFast repository organization while remaining an independent,
-clean-room implementation.
+Paraglide, and Cloudflare Workers.
 
 ## Users
 
@@ -48,8 +46,6 @@ configuration surface, and no unused service bindings.
 - The default deployment uses the account's `workers.dev` subdomain.
 - The template has no authentication, backend product modules, resource
   bindings, secrets, environment-variable setup, or additional content pages.
-- Source, assets, copy, tests, and history are written independently and do not
-  derive from the MkFast commercial template.
 
 ## Brand Commitments
 
