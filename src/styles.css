@@ -1,0 +1,135 @@
+@import "@fontsource/baloo-2/latin-400.css";
+@import "@fontsource/baloo-2/latin-500.css";
+@import "@fontsource/baloo-2/latin-600.css";
+@import "@fontsource/baloo-2/latin-700.css";
+@import "@fontsource/baloo-2/latin-800.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #fff8e8;
+  --foreground: #171313;
+  --surface: #fffdf7;
+  --muted: #eee4d2;
+  --muted-foreground: #62594d;
+  --ink: #171313;
+  --paper: #fff8e8;
+  --orange: #ff6038;
+  --orange-strong: #e94c27;
+  --yellow: #ffd84a;
+  --yellow-soft: #ffe57d;
+  --cyan: #56d2ee;
+  --green: #a8dc73;
+  --lavender: #c4b7f2;
+  --positive: #176b35;
+  --focus: #2b79ff;
+}
+
+.dark {
+  --background: #181414;
+  --foreground: #fff8e8;
+  --surface: #242020;
+  --muted: #342d29;
+  --muted-foreground: #cec2ae;
+  --ink: #070606;
+  --paper: #fff8e8;
+  --orange: #ff7956;
+  --orange-strong: #f16543;
+  --yellow: #f7dc71;
+  --yellow-soft: #ffe795;
+  --cyan: #80d6e9;
+  --green: #b9dd87;
+  --lavender: #c9c0eb;
+  --positive: #75e69c;
+  --focus: #f7dc71;
+}
+
+@theme inline {
+  --font-sans:
+    "Baloo 2", "Arial Rounded MT Bold", "PingFang SC", "Microsoft YaHei",
+    ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-orange: var(--orange);
+  --color-orange-strong: var(--orange-strong);
+  --color-yellow: var(--yellow);
+  --color-yellow-soft: var(--yellow-soft);
+  --color-cyan: var(--cyan);
+  --color-green: var(--green);
+  --color-lavender: var(--lavender);
+  --color-positive: var(--positive);
+  --color-focus: var(--focus);
+  --shadow-brutal-xs: 2px 2px 0 0 var(--ink);
+  --shadow-brutal: 4px 4px 0 0 var(--ink);
+  --shadow-brutal-lg: 6px 6px 0 0 var(--ink);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+      "Baloo 2", "Arial Rounded MT Bold", "PingFang SC", "Microsoft YaHei",
+      ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  ::selection {
+    background: var(--yellow);
+    color: var(--ink);
+  }
+}
+
+@keyframes board-arrive {
+  from {
+    opacity: 0.65;
+    transform: translateY(18px) rotate(1.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.hero-board {
+  animation: board-arrive 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-board {
+    animation: none;
+  }
+}

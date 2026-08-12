@@ -1,0 +1,14 @@
+node_modules/
+.output/
+.wrangler/
+dist/
+playwright-report/
+test-results/
+coverage/
+.impeccable/
+project.inlang/.meta.json
+project.inlang/README.md
+.DS_Store
+*.local
+.env*
+!.env.example

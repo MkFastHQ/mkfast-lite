@@ -1,0 +1,49 @@
+{
+  "name": "mkfast-lite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "dev": "vite dev --host 127.0.0.1 --port 3000",
+    "build": "vite build && tsc --noEmit",
+    "preview": "vite preview",
+    "deploy": "pnpm run build && wrangler deploy",
+    "check": "biome check . && pnpm locale:check && vitest run && tsc --noEmit",
+    "lint": "biome check --write .",
+    "format": "biome format --write .",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "e2e:install": "playwright install chromium",
+    "locale:check": "tsx scripts/check-locale-keys.ts",
+    "locale:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/locale/paraglide --emit-ts-declarations",
+    "cf-typegen": "wrangler types --env-interface Env",
+    "postinstall": "pnpm locale:compile && pnpm cf-typegen"
+  },
+  "dependencies": {
+    "@fontsource/baloo-2": "5.3.0",
+    "@inlang/paraglide-js": "^2.20.0",
+    "@tanstack/react-router": "^1.170.18",
+    "@tanstack/react-start": "^1.168.32",
+    "@tabler/icons-react": "^3.36.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.12",
+    "@cloudflare/vite-plugin": "^1.47.0",
+    "@playwright/test": "^1.62.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "tailwindcss": "^4.1.18",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.2",
+    "vite": "^7.3.6",
+    "vite-tsconfig-paths": "^6.0.2",
+    "vitest": "4.1.10",
+    "wrangler": "^4.114.0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.12/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "es5"
+    }
+  },
+  "linter": {
+    "rules": {
+      "recommended": true,
+      "performance": {
+        "noDynamicNamespaceImportAccess": "off"
+      }
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!dist",
+      "!.output",
+      "!.wrangler",
+      "!node_modules",
+      "!playwright-report",
+      "!test-results",
+      "!project.inlang/.meta.json",
+      "!project.inlang/README.md",
+      "!src/routeTree.gen.ts",
+      "!src/locale/paraglide",
+      "!worker-configuration.d.ts"
+    ]
+  }
+}

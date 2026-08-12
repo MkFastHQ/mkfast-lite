@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fff8e8"/>
+  <rect x="42" y="42" width="1116" height="546" rx="22" fill="#ffd84a" stroke="#171313" stroke-width="6"/>
+  <rect x="76" y="76" width="690" height="390" rx="18" fill="#fffdf7" stroke="#171313" stroke-width="6"/>
+  <rect x="88" y="88" width="690" height="390" rx="18" fill="#56d2ee" stroke="#171313" stroke-width="6"/>
+  <rect x="105" y="104" width="690" height="390" rx="18" fill="#fffdf7" stroke="#171313" stroke-width="6"/>
+  <rect x="853" y="120" width="220" height="220" rx="32" fill="#ff6038" stroke="#171313" stroke-width="6"/>
+  <path d="M898 291V166h40l29 39 29-39h40v125h-40v-65l-29 39-29-39v65h-40Z" fill="#171313"/>
+  <text x="150" y="205" fill="#171313" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-size="42" font-weight="800">MKFAST LITE</text>
+  <text x="150" y="315" fill="#171313" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-size="72" font-weight="900">A SMALLER START.</text>
+  <text x="150" y="397" fill="#ff6038" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-size="72" font-weight="900">A FASTER SITE.</text>
+  <rect x="870" y="404" width="240" height="88" rx="14" fill="#a8dc73" stroke="#171313" stroke-width="6"/>
+  <text x="906" y="460" fill="#171313" font-family="Arial,sans-serif" font-size="28" font-weight="700">WORKERS →</text>
+  <circle cx="1076" cy="94" r="25" fill="#c4b7f2" stroke="#171313" stroke-width="6"/>
+</svg>
