@@ -1,5 +1,5 @@
+import { Container } from '@/components/layout/container';
 import { Logo } from '@/components/shared/logo';
-import { Container } from '@/components/ui/primitives';
 import { websiteConfig } from '@/config/website';
 import { type AppLocale, message } from '@/lib/locale';
 

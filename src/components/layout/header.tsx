@@ -1,16 +1,20 @@
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { Container } from '@/components/layout/container';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { ThemeSwitcher } from '@/components/layout/theme-switcher';
 import { Logo } from '@/components/shared/logo';
 import { Button } from '@/components/ui/button';
-import { ButtonLink, Container } from '@/components/ui/primitives';
+import { ButtonLink } from '@/components/ui/button-link';
 import { websiteConfig } from '@/config/website';
+import { useScroll } from '@/hooks/use-scroll';
 import { type AppLocale, localizedPath, message } from '@/lib/locale';
+import { cn } from '@/lib/utils';
 
 export function Header({ locale }: { locale: AppLocale }) {
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState(false);
+  const scrolled = useScroll(50);
 
   useEffect(() => {
     setReady(true);
@@ -20,11 +24,16 @@ export function Header({ locale }: { locale: AppLocale }) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/20 bg-background/95 backdrop-blur-[8px]">
+    <header
+      className={cn(
+        'sticky top-0 z-50 bg-background/95 backdrop-blur-[8px]',
+        scrolled && 'border-b border-ink/20'
+      )}
+    >
       <Container>
         <nav
           aria-label={message('nav_primary', locale)}
-          className="flex min-h-18 items-center gap-5"
+          className="flex min-h-18 items-center gap-5 lg:grid lg:grid-cols-[1fr_auto_1fr]"
         >
           <a
             href={localizedPath(locale)}
@@ -37,7 +46,7 @@ export function Header({ locale }: { locale: AppLocale }) {
             </span>
           </a>
 
-          <div className="ml-auto hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center gap-1 lg:flex">
             {websiteConfig.navigation.map((item) => (
               <a
                 key={item.id}
@@ -49,7 +58,7 @@ export function Header({ locale }: { locale: AppLocale }) {
             ))}
           </div>
 
-          <div className="ml-auto flex items-center gap-2 lg:ml-3">
+          <div className="ml-auto flex items-center gap-2 lg:ml-0 lg:justify-self-end">
             <LanguageSwitcher locale={locale} />
             <ThemeSwitcher locale={locale} />
             <span className="hidden sm:block">

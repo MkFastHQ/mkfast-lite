@@ -20,9 +20,9 @@ test.describe('simple landing page', () => {
     );
     await expect(page.locator('#foundation')).toHaveCount(0);
     await expect(page.locator('#stack')).toBeVisible();
-    await expect(page.locator('#architecture')).toBeVisible();
+    await expect(page.locator('#structure')).toBeVisible();
     await expect(
-      page.locator('#architecture article h3').allTextContents()
+      page.locator('#structure article h3').allTextContents()
     ).resolves.toEqual(['Delivery', 'Content', 'Components', 'Routes']);
     await expect(
       page.getByText(
@@ -80,7 +80,7 @@ test.describe('simple landing page', () => {
       'background-color',
       'rgb(196, 183, 242)'
     );
-    await expect(page.locator('#architecture')).toHaveCSS(
+    await expect(page.locator('#structure')).toHaveCSS(
       'background-color',
       'rgb(255, 216, 74)'
     );

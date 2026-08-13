@@ -1,11 +1,9 @@
 import { IconArrowRight } from '@tabler/icons-react';
-import {
-  BrutalCard,
-  ButtonLink,
-  Container,
-  Section,
-  Tag,
-} from '@/components/ui/primitives';
+import { Container } from '@/components/layout/container';
+import { BrutalCard } from '@/components/ui/brutal-card';
+import { ButtonLink } from '@/components/ui/button-link';
+import { Section } from '@/components/ui/section';
+import { Tag } from '@/components/ui/tag';
 import { websiteConfig } from '@/config/website';
 import { type AppLocale, message } from '@/lib/locale';
 

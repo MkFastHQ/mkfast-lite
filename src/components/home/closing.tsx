@@ -1,5 +1,6 @@
 import { IconArrowRight } from '@tabler/icons-react';
-import { ButtonLink, Container } from '@/components/ui/primitives';
+import { Container } from '@/components/layout/container';
+import { ButtonLink } from '@/components/ui/button-link';
 import { websiteConfig } from '@/config/website';
 import { type AppLocale, message } from '@/lib/locale';
 

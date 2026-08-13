@@ -4,7 +4,8 @@ import {
   IconLayout,
   IconRoute,
 } from '@tabler/icons-react';
-import { Container, Section } from '@/components/ui/primitives';
+import { Container } from '@/components/layout/container';
+import { Section } from '@/components/ui/section';
 import { type AppLocale, message } from '@/lib/locale';
 
 const layers = [
@@ -16,7 +17,7 @@ const layers = [
 
 export function Architecture({ locale }: { locale: AppLocale }) {
   return (
-    <Section id="architecture" className="bg-yellow text-ink">
+    <Section id="structure" className="bg-yellow text-ink">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-18">
           <div className="lg:self-center">

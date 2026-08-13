@@ -4,7 +4,7 @@ export const websiteConfig = {
   defaultTheme: 'system' as const,
   navigation: [
     { id: 'stack', labelKey: 'nav_stack' },
-    { id: 'architecture', labelKey: 'nav_structure' },
+    { id: 'structure', labelKey: 'nav_structure' },
     { id: 'faq', labelKey: 'nav_faq' },
   ],
 };

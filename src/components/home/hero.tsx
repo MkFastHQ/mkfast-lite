@@ -3,12 +3,10 @@ import {
   IconBrandCloudflare,
   IconCheck,
 } from '@tabler/icons-react';
-import {
-  BrutalCard,
-  ButtonLink,
-  Container,
-  Tag,
-} from '@/components/ui/primitives';
+import { Container } from '@/components/layout/container';
+import { BrutalCard } from '@/components/ui/brutal-card';
+import { ButtonLink } from '@/components/ui/button-link';
+import { Tag } from '@/components/ui/tag';
 import { websiteConfig } from '@/config/website';
 import { type AppLocale, message } from '@/lib/locale';
 
@@ -18,8 +16,39 @@ export function Hero({ locale }: { locale: AppLocale }) {
   );
 
   return (
-    <section className="flex min-h-[calc(100vh-4.625rem)] min-h-[calc(100dvh-4.625rem)] items-center overflow-hidden pb-20 pt-12 sm:pb-28 sm:pt-18">
-      <Container className="w-full">
+    <section className="hero-section relative isolate flex min-h-[calc(100vh-4.625rem)] min-h-[calc(100dvh-4.625rem)] items-center overflow-hidden pb-20 pt-12 sm:pb-28 sm:pt-18">
+      <div
+        className="hero-blueprint pointer-events-none absolute inset-0 -z-10"
+        aria-hidden="true"
+      >
+        <div className="hero-blueprint-piece hero-blueprint-piece-cyan" />
+        <div className="hero-blueprint-piece hero-blueprint-piece-orange" />
+        <div className="hero-blueprint-piece hero-blueprint-piece-lavender" />
+        <svg
+          className="hero-blueprint-lines"
+          viewBox="0 0 1440 820"
+          preserveAspectRatio="none"
+          role="presentation"
+        >
+          <path d="M0 148H226V96H418" />
+          <path d="M94 121v54M121 133v30M148 133v30M175 133v30M202 121v54" />
+          <circle cx="226" cy="148" r="8" />
+          <path d="M1008 92h252v54h180" />
+          <path d="M1218 119h18M1248 119h18M1278 119h18M1308 119h18" />
+          <circle cx="1008" cy="92" r="8" />
+          <path d="M0 658h174v72h252" />
+          <path d="M204 703v54M231 715v30M258 715v30M285 715v30M312 703v54" />
+          <circle cx="174" cy="658" r="8" />
+          <path d="M1084 674h164v-82h192" />
+          <path d="M1108 647v54M1135 659v30M1162 659v30M1189 659v30M1216 647v54" />
+          <circle cx="1248" cy="674" r="8" />
+        </svg>
+        <span className="hero-blueprint-bolt hero-blueprint-bolt-one" />
+        <span className="hero-blueprint-bolt hero-blueprint-bolt-two" />
+        <span className="hero-blueprint-bolt hero-blueprint-bolt-three" />
+      </div>
+
+      <Container className="relative w-full">
         <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
           <div>
             <Tag>{message('hero_badge', locale)}</Tag>

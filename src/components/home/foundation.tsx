@@ -7,7 +7,9 @@ import {
   IconTestPipe,
   IconX,
 } from '@tabler/icons-react';
-import { BrutalCard, Container, Section } from '@/components/ui/primitives';
+import { Container } from '@/components/layout/container';
+import { BrutalCard } from '@/components/ui/brutal-card';
+import { Section } from '@/components/ui/section';
 import { type AppLocale, message } from '@/lib/locale';
 
 const includedIcons = [

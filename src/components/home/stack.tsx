@@ -4,7 +4,8 @@ import {
   IconLanguage,
   IconStack2,
 } from '@tabler/icons-react';
-import { Container, Section } from '@/components/ui/primitives';
+import { Container } from '@/components/layout/container';
+import { Section } from '@/components/ui/section';
 import { type AppLocale, message } from '@/lib/locale';
 
 const technologies = [

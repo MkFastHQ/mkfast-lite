@@ -1,5 +1,6 @@
 import { IconPlus } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { Container } from '@/components/layout/container';
 import {
   Accordion,
   AccordionHeader,
@@ -7,7 +8,7 @@ import {
   AccordionPanel,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Container, Section } from '@/components/ui/primitives';
+import { Section } from '@/components/ui/section';
 import { type AppLocale, message } from '@/lib/locale';
 
 export function Faq({ locale }: { locale: AppLocale }) {
