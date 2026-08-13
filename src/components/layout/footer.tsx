@@ -5,7 +5,7 @@ import { type AppLocale, message } from '@/lib/locale';
 
 export function Footer({ locale }: { locale: AppLocale }) {
   return (
-    <footer className="border-t-2 border-ink bg-surface py-12 text-foreground">
+    <footer className="border-t border-ink/20 bg-surface py-12 text-foreground">
       <Container className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-lg">
           <div className="mb-4 flex items-center gap-3">
