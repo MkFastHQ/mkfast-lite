@@ -1,6 +1,6 @@
 {
   "site_name": "TanStarter Lite",
-  "site_title": "TanStarter Lite | A smaller start for a faster site",
+  "site_title": "TanStarter Lite | Smaller starter, faster website",
   "site_description": "The lite version of TanStarter: a minimal bilingual starter for simple websites, built with React, TanStack Start, dark mode, SEO, and Cloudflare Workers.",
   "skip_to_content": "Skip to content",
   "nav_foundation": "Why Lite?",
@@ -19,8 +19,8 @@
   "language_english": "English",
   "language_chinese": "简体中文",
   "hero_badge": "ONE LANDING PAGE · NO BACKEND OVERHEAD",
-  "hero_title_a": "A smaller start",
-  "hero_title_b": "A faster site",
+  "hero_title_a": "Smaller starter",
+  "hero_title_b": "Faster website",
   "hero_description": "TanStarter Lite gives a simple website what it actually needs: bilingual content, dark mode, SEO, tests, and one-command Cloudflare deployment.",
   "hero_note": "React 19 · TanStack Start · Cloudflare Workers",
   "hero_board_title": "Your site starts here",

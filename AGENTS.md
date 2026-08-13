@@ -24,7 +24,7 @@ pnpm dev
 pnpm check
 pnpm build
 pnpm e2e
-pnpm deploy
+pnpm run deploy
 ```
 
 Run `pnpm locale:compile` after locale copy changes and `pnpm cf-typegen` after
