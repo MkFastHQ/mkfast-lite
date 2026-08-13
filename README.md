@@ -18,11 +18,11 @@
 
 [![TanStarter Lite preview](./public/og.png)](https://github.com/MkFastHQ/mkfast-lite)
 
-TanStarter Lite is the lite version of TanStarter: an open-source, deliberately
-small starter for a multilingual public website. It provides a complete
-localized landing page, light/dark/system themes, SEO endpoints,
-tests, and Cloudflare Workers deployment—without the operational surface of a
-SaaS starter.
+TanStarter Lite is the lightweight, open-source edition of
+[TanStarter](https://tanstarter.dev): a deliberately small starter for a
+multilingual public website. It includes a complete localized landing page,
+light/dark/system themes, SEO endpoints, tests, and Cloudflare Workers
+deployment—without the operational surface of a SaaS starter.
 
 It intentionally does not include authentication, payments, persistence,
 storage, cache, transactional email, newsletters, or an admin surface. Add
@@ -73,7 +73,7 @@ pnpm dev
 Open `http://localhost:3000` for English or `http://localhost:3000/zh` for
 Simplified Chinese.
 
-## Common commands
+### Common commands
 
 | Command | Description |
 | --- | --- |
@@ -87,14 +87,14 @@ Simplified Chinese.
 | `pnpm cf-typegen` | Regenerate Worker environment types after Wrangler changes |
 | `pnpm deploy` | Build and deploy the Worker |
 
-The end-to-end suite covers both locales, language switching, theme
-persistence, responsive navigation, FAQ behavior, machine-readable SEO
-endpoints, and the intentionally absent application routes.
+`pnpm e2e` covers both locales, language switching, theme persistence,
+responsive navigation, FAQ behavior, machine-readable SEO endpoints, and the
+intentionally absent application routes.
 
 ## Customize the template
 
-1. Update the site name, canonical URL, repository URL, default theme, and navigation in
-   `src/config/website.ts`.
+1. Update the site name, canonical URL, repository URL, default theme, and
+   navigation in `src/config/website.ts`.
 2. Edit English and Simplified Chinese copy in
    `project.inlang/messages/en.json` and `project.inlang/messages/zh.json`.
 3. Replace `public/favicon.svg` and the Open Graph image in `public/`.
@@ -113,17 +113,11 @@ pnpm locale:compile
 pnpm locale:check
 ```
 
-Generated `src/routeTree.gen.ts` and `worker-configuration.d.ts` follow the
-same rule: regenerate them through the relevant tooling rather than editing
-them directly.
-
-The default routes are `/`, `/zh`, `/robots.txt`, `/sitemap.xml`, and
-`/manifest.webmanifest`. Product routes such as login, pricing, dashboard,
-and admin deliberately return 404 until you decide to add them.
-
-Set `websiteConfig.url` to the production origin before launch. Until then,
-canonical, alternate-language, and social metadata use the incoming request
-origin so local development and deployment previews remain valid.
+Do not edit generated `src/routeTree.gen.ts` or `worker-configuration.d.ts`
+by hand either; regenerate them with the relevant tooling. Set
+`websiteConfig.url` to the production origin before launch. Until then, the
+SEO metadata uses the incoming request origin, keeping local development and
+deployment previews valid.
 
 ## Deploy to Cloudflare Workers
 
@@ -148,9 +142,10 @@ pnpm exec wrangler deploy --domain your-site.example.com
 Do not commit personal account IDs, tokens, or secrets to a project created
 from this template.
 
-## Project map
+## Architecture
 
-- `src/routes/` — pages, 404 handling, and machine-readable endpoints.
+- `src/routes/` — the English and Chinese home pages, 404 handling, and
+  machine-readable endpoints.
 - `src/components/` — layout, language/theme controls, UI primitives, and
   landing-page sections.
 - `src/config/` — product-owned site identity, repository link, and
@@ -176,22 +171,17 @@ pnpm e2e
 git diff --check
 ```
 
-## Links
-
-- [Repository](https://github.com/MkFastHQ/mkfast-lite) — source code and issue tracker.
-- [TanStarter](https://tanstarter.dev) — a fuller TanStack and Cloudflare starter for SaaS products.
-- [MkAgent](https://mkagent.app) — a local-first, Pi-powered AI agent workspace.
-
 ## Author
 
 [OpenFox](https://mksaas.link/fox-x) is an independent developer building
 products and developer tools. His products include:
 
-- [MkAgent](https://mkagent.app) — A local-first, Pi-powered AI agent workspace for Desktop, WebUI, and CLI.
 - [TanStarter](https://tanstarter.dev) — Ship Faster with TanStack, Cost Less with Cloudflare.
 - [MkSaaS](https://mksaas.com) — Make Your AI SaaS Product in a Weekend.
 - [MkImage](https://mkimage.ai) — Make Any Images Possible.
-- [MkDirs](https://mkdirs.com) — Launch AI-powered directory in 30 minutes.
+- [MkAgent](https://mkagent.app) — A local-first, Pi-powered AI agent workspace for Desktop, WebUI, and CLI.
+- [MkExt](https://mkext.dev) — An open-source browser extension starter for SaaS applications.
+- [Mkdirs](https://mkdirs.com) — Launch AI-powered directory in 30 minutes.
 - [MkDollar](https://mkdollar.com) — The all-in-one platform to help you make first dollar online.
 
 ## License
