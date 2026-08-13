@@ -52,6 +52,7 @@ export function LanguageSwitcher({ locale }: { locale: AppLocale }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
+        data-slot="language-switcher-trigger"
         className={buttonVariants({
           variant: 'icon',
           className:
@@ -68,6 +69,7 @@ export function LanguageSwitcher({ locale }: { locale: AppLocale }) {
           return (
             <DropdownMenuLinkItem
               key={option}
+              data-locale={option}
               href={`${localizedPath(option)}${suffix}`}
               aria-current={current ? 'page' : undefined}
             >

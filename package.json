@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@10.30.3",
   "scripts": {
-    "dev": "vite dev --host 127.0.0.1 --port 3000",
+    "dev": "vite dev --host 127.0.0.1 --port 3000 --strictPort",
     "build": "vite build && tsc --noEmit",
     "preview": "vite preview",
     "deploy": "pnpm run build && wrangler deploy",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
-    "@fontsource/baloo-2": "5.3.0",
+    "@fontsource-variable/baloo-2": "5.3.0",
     "@inlang/paraglide-js": "^2.20.0",
     "@tabler/icons-react": "^3.36.1",
     "@tanstack/react-router": "^1.170.18",

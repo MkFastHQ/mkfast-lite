@@ -93,7 +93,7 @@ endpoints, and the intentionally absent application routes.
 
 ## Customize the template
 
-1. Update the site name, repository URL, default theme, and navigation in
+1. Update the site name, canonical URL, repository URL, default theme, and navigation in
    `src/config/website.ts`.
 2. Edit English and Simplified Chinese copy in
    `project.inlang/messages/en.json` and `project.inlang/messages/zh.json`.
@@ -120,6 +120,10 @@ them directly.
 The default routes are `/`, `/zh`, `/robots.txt`, `/sitemap.xml`, and
 `/manifest.webmanifest`. Product routes such as login, pricing, dashboard,
 and admin deliberately return 404 until you decide to add them.
+
+Set `websiteConfig.url` to the production origin before launch. Until then,
+canonical, alternate-language, and social metadata use the incoming request
+origin so local development and deployment previews remain valid.
 
 ## Deploy to Cloudflare Workers
 

@@ -38,10 +38,10 @@ export function Header({ locale }: { locale: AppLocale }) {
           <a
             href={localizedPath(locale)}
             className="flex shrink-0 items-center gap-2 no-underline"
-            aria-label={message('site_name', locale)}
+            aria-label={websiteConfig.name}
           >
             <Logo />
-            <span className="text-xl font-black tracking-[-0.02em]">
+            <span className="hidden text-xl font-black tracking-[-0.02em] min-[360px]:inline">
               {websiteConfig.name}
             </span>
           </a>

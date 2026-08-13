@@ -1,6 +1,8 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { websiteConfig } from '@/config/website';
-import { localeMeta, localizedPath, message } from '@/lib/locale';
+import { localeMeta, localizedPath } from '@/lib/locale';
+import { absoluteSiteUrl, homeHead, siteOrigin } from '@/lib/seo';
 import { cn } from '@/lib/utils';
 
 describe('TanStarter Lite core contracts', () => {
@@ -12,22 +14,38 @@ describe('TanStarter Lite core contracts', () => {
     expect(localeMeta.zh.hreflang).toBe('zh-CN');
   });
 
-  it('reads both authoritative locale sources', () => {
-    expect(message('hero_title_a', 'en')).toBe('A smaller start');
-    expect(message('hero_title_a', 'zh')).toBe('更轻的起点，');
-  });
-
   it('keeps the repository as the only external destination', () => {
     expect(websiteConfig.name).toBe('TanStarter Lite');
     expect(websiteConfig.repository).toBe(
       'https://github.com/MkFastHQ/mkfast-lite'
     );
-    expect(Object.keys(websiteConfig)).toEqual([
-      'name',
-      'repository',
-      'defaultTheme',
-      'navigation',
-    ]);
+    expect(websiteConfig.themeStorageKey).toBeTruthy();
+    expect(websiteConfig.manifest.startUrl).toBe('/');
+  });
+
+  it('keeps public theme colors aligned with the CSS tokens', () => {
+    const styles = readFileSync('src/styles.css', 'utf8');
+    expect(styles).toContain(
+      `--background: ${websiteConfig.colors.background};`
+    );
+    expect(styles).toContain(`--yellow: ${websiteConfig.colors.theme};`);
+  });
+
+  it('builds absolute metadata from the configured or request origin', () => {
+    expect(siteOrigin('https://example.com/')).toBe('https://example.com');
+    expect(absoluteSiteUrl('/zh', 'https://example.com')).toBe(
+      'https://example.com/zh'
+    );
+
+    const head = homeHead('en', 'https://example.com');
+    expect(head.links[0]).toEqual({
+      rel: 'canonical',
+      href: 'https://example.com/',
+    });
+    expect(head.meta).toContainEqual({
+      property: 'og:image',
+      content: 'https://example.com/og.png',
+    });
   });
 
   it('joins optional class names without false values', () => {

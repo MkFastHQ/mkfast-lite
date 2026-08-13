@@ -8,6 +8,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { websiteConfig } from '@/config/website';
 import { type AppLocale, message } from '@/lib/locale';
 
 type Theme = 'light' | 'dark' | 'system';
@@ -29,16 +30,16 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
-  const [theme, setTheme] = useState<Theme>('system');
+  const [theme, setTheme] = useState<Theme>(websiteConfig.defaultTheme);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(
-      'tanstarter-lite-theme'
+      websiteConfig.themeStorageKey
     ) as Theme | null;
     const initial = themes.some((item) => item.value === stored)
       ? (stored as Theme)
-      : 'system';
+      : websiteConfig.defaultTheme;
     setTheme(initial);
     applyTheme(initial);
     setReady(true);
@@ -53,7 +54,7 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
 
   function selectTheme(next: Theme) {
     setTheme(next);
-    localStorage.setItem('tanstarter-lite-theme', next);
+    localStorage.setItem(websiteConfig.themeStorageKey, next);
     applyTheme(next);
   }
 
@@ -78,6 +79,7 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
+        data-slot="theme-switcher-trigger"
         className={buttonVariants({
           variant: 'icon',
           className:
@@ -94,7 +96,11 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
           onValueChange={(next) => selectTheme(next as Theme)}
         >
           {themes.map(({ value, Icon }) => (
-            <DropdownMenuRadioItem key={value} value={value}>
+            <DropdownMenuRadioItem
+              key={value}
+              data-theme-option={value}
+              value={value}
+            >
               <Icon aria-hidden="true" className="size-4" stroke={2.4} />
               {message(`theme_${value}` as 'theme_system', locale)}
             </DropdownMenuRadioItem>
