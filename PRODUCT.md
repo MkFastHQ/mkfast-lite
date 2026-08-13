@@ -20,7 +20,7 @@ need.
 ## Product Purpose
 
 TanStarter Lite is the lite version of TanStarter: a minimal web starter for a
-small simple website. It provides a complete bilingual landing page,
+small simple website. It provides a complete multilingual landing page,
 responsive navigation, language and theme menus, light/dark/system themes, SEO
 fundamentals, tests, and Cloudflare Workers deployment without accounts,
 payments, databases, storage, cache, email, newsletters, or admin surfaces.
@@ -68,7 +68,7 @@ architecture details rather than invented social proof.
 1. Remove before adding.
 2. Make the first customization obvious.
 3. Keep every shipped dependency accountable to visible behavior.
-4. Treat bilingual content, accessibility, SEO, and deployment as core.
+4. Treat multilingual content, accessibility, SEO, and deployment as core.
 5. Prefer a small, legible codebase over optional module abstractions.
 
 ## Accessibility & Inclusion

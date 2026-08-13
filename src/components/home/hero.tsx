@@ -23,9 +23,9 @@ export function Hero({ locale }: { locale: AppLocale }) {
         <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
           <div>
             <Tag>{message('hero_badge', locale)}</Tag>
-            <h1 className="mt-7 max-w-[780px] text-balance text-[clamp(3.5rem,8vw,6rem)] font-black leading-[1.06] tracking-[-0.035em]">
-              {message('hero_title_a', locale)}{' '}
-              <span className="text-orange">
+            <h1 className="mt-7 max-w-[780px] text-balance text-[clamp(3.5rem,7vw,5.5rem)] font-black leading-[1.06] tracking-[-0.035em]">
+              <span className="block">{message('hero_title_a', locale)}</span>
+              <span className="block text-orange">
                 {message('hero_title_b', locale)}
               </span>
             </h1>
@@ -64,7 +64,7 @@ export function Hero({ locale }: { locale: AppLocale }) {
                 >
                   {message('hero_board_title', locale)}
                 </span>
-                <span className="rounded-full border-2 border-ink bg-green px-3 py-1 text-xs font-black uppercase text-ink">
+                <span className="rounded-full border-2 border-ink bg-lavender px-3 py-1 text-xs font-black uppercase text-ink">
                   {message('hero_board_status', locale)}
                 </span>
               </div>
@@ -91,7 +91,7 @@ export function Hero({ locale }: { locale: AppLocale }) {
               </div>
               <div
                 data-slot="hero-board-deploy"
-                className="mt-4 flex items-center gap-3 rounded-[10px] border-2 border-ink bg-orange px-5 py-4 text-sm font-black text-ink shadow-brutal-xs"
+                className="mt-4 flex items-center gap-3 rounded-[10px] border-2 border-ink bg-green px-5 py-4 text-sm font-black text-ink shadow-brutal-xs"
               >
                 <IconBrandCloudflare aria-hidden="true" />
                 <span>pnpm deploy</span>

@@ -4,7 +4,7 @@
 
   <!-- Brand mark aligned with the product-board top edge. -->
   <g fill="#171313" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-weight="800">
-    <rect x="80" y="109" width="31" height="31" rx="8" fill="#ff6038" stroke="#171313" stroke-width="2"/>
+    <rect x="80" y="109" width="31" height="31" rx="8" fill="#ff6038" stroke="#171313" stroke-width="3"/>
     <path d="M99 115 88.6 129.5h6.5l-2.7 8.7L103 123.7h-6.5l2.5-8.7Z"/>
     <text x="123" y="133" font-size="22">TanStarter Lite</text>
   </g>
@@ -14,7 +14,7 @@
     <text x="80" y="230" fill="#171313" font-size="67" font-weight="900" letter-spacing="-2">Smaller starter</text>
     <text x="80" y="305" fill="#ff6038" font-size="67" font-weight="900" letter-spacing="-2">Faster website</text>
     <g fill="#62594d" font-size="17" font-weight="700">
-      <text x="81" y="357">A bilingual starter with dark mode, SEO, tests, and</text>
+      <text x="81" y="357">A multilingual starter with dark mode, SEO, tests, and</text>
       <text x="81" y="384">one-command Cloudflare Workers deployment.</text>
     </g>
     <rect x="81" y="427" width="156" height="46" rx="13" fill="#ffd84a" stroke="#171313" stroke-width="3"/>
@@ -45,7 +45,7 @@
     </g>
     <g fill="#171313" font-size="17" font-weight="700">
       <text x="601" y="310">1</text><text x="634" y="310">Landing page</text><text x="1073" y="310">✓</text>
-      <text x="601" y="363">2</text><text x="634" y="363">English + Chinese</text><text x="1073" y="363">✓</text>
+      <text x="601" y="363">2</text><text x="634" y="363">Multilingual content</text><text x="1073" y="363">✓</text>
       <text x="601" y="416">3</text><text x="634" y="416">Light / dark theme</text><text x="1073" y="416">✓</text>
     </g>
     <rect x="578" y="453" width="524" height="56" rx="7" fill="#a8dc73"/>

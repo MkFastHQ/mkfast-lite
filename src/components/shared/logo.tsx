@@ -5,7 +5,7 @@ export function Logo({ className }: { className?: string }) {
     <span
       aria-hidden="true"
       className={cn(
-        'inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-ink bg-orange text-ink shadow-brutal-xs',
+        'inline-flex size-11 shrink-0 items-center justify-center rounded-lg border-2 border-ink bg-orange text-ink shadow-brutal-xs',
         className
       )}
     >

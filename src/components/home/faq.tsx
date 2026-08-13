@@ -16,7 +16,7 @@ export function Faq({ locale }: { locale: AppLocale }) {
   useEffect(() => setReady(true), []);
 
   return (
-    <Section id="faq" className="bg-green text-ink">
+    <Section id="faq" className="bg-lavender text-ink">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-18">
           <h2 className="text-balance text-4xl font-black leading-[1.1] tracking-[-0.03em] sm:text-5xl">
@@ -27,8 +27,8 @@ export function Faq({ locale }: { locale: AppLocale }) {
               <AccordionItem key={item} value={`faq-${item}`}>
                 <AccordionHeader>
                   <AccordionTrigger>
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-cyan text-sm text-ink">
-                      ?
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-cyan text-sm font-black text-ink">
+                      {item}
                     </span>
                     {message(`faq_${item}_q` as 'faq_1_q', locale)}
                     <IconPlus

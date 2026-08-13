@@ -11,7 +11,7 @@ export function Accordion({
   return (
     <BaseAccordion.Root
       className={cn(
-        'divide-y-2 divide-ink overflow-hidden rounded-[14px] border-2 border-ink bg-surface shadow-brutal dark:bg-paper',
+        'divide-y divide-ink/30 overflow-hidden rounded-[14px] border-2 border-ink bg-surface shadow-brutal dark:bg-paper',
         className
       )}
       {...props}
@@ -46,7 +46,7 @@ export function AccordionTrigger({
   return (
     <BaseAccordion.Trigger
       className={cn(
-        'group flex w-full items-center gap-4 p-5 text-left text-lg font-black hover:bg-yellow hover:text-ink data-[panel-open]:bg-yellow data-[panel-open]:text-ink focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-focus sm:p-6',
+        'group flex w-full items-center gap-4 border-b border-transparent p-5 text-left text-lg font-black hover:bg-yellow hover:text-ink data-[panel-open]:border-ink/30 data-[panel-open]:bg-yellow data-[panel-open]:text-ink focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-focus sm:p-6',
         className
       )}
       {...props}

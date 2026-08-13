@@ -50,7 +50,7 @@ export function Template({ locale }: { locale: AppLocale }) {
             <Tag className="!bg-green">
               {message('template_repo_label', locale)}
             </Tag>
-            <div className="mt-8 border-y-2 border-ink py-7">
+            <div className="mt-8 border-y border-ink/30 py-7">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.08em] text-ink/55">
                 github.com
               </p>

@@ -54,6 +54,8 @@ export function Header({ locale }: { locale: AppLocale }) {
             <ThemeSwitcher locale={locale} />
             <span className="hidden sm:block">
               <ButtonLink
+                variant="plain"
+                className="!min-h-11 px-4 py-2 text-sm dark:bg-paper dark:text-ink dark:hover:bg-cyan"
                 href={websiteConfig.repository}
                 target="_blank"
                 rel="noreferrer"

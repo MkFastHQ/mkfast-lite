@@ -71,7 +71,7 @@ export function LanguageSwitcher({ locale }: { locale: AppLocale }) {
               href={`${localizedPath(option)}${suffix}`}
               aria-current={current ? 'page' : undefined}
             >
-              <span className="w-7 text-xs font-black uppercase text-ink">
+              <span className="w-7 text-xs font-black uppercase text-foreground">
                 {localeMeta[option].label}
               </span>
               <span>{message(localeMeta[option].messageKey, locale)}</span>

@@ -1,7 +1,7 @@
 <h1 align="center">TanStarter Lite</h1>
 
 <p align="center">
-  A bilingual starter for a simple, fast public website.
+  A multilingual starter for a simple, fast public website.
 </p>
 
 <p align="center">
@@ -19,8 +19,8 @@
 [![TanStarter Lite preview](./public/og.png)](https://github.com/MkFastHQ/mkfast-lite)
 
 TanStarter Lite is the lite version of TanStarter: an open-source, deliberately
-small starter for a bilingual public website. It provides a complete English
-and Simplified Chinese landing page, light/dark/system themes, SEO endpoints,
+small starter for a multilingual public website. It provides a complete
+localized landing page, light/dark/system themes, SEO endpoints,
 tests, and Cloudflare Workers deployment—without the operational surface of a
 SaaS starter.
 
@@ -30,7 +30,7 @@ those only when they match the product you are building.
 
 ## Features
 
-- **Bilingual by default** — English at `/` and Simplified Chinese at `/zh`,
+- **Multilingual by default** — English at `/` and Simplified Chinese at `/zh`,
   with typed Paraglide messages and a language menu that keeps the current
   section anchor.
 - **A focused landing page** — responsive navigation, hero, stack,
@@ -103,7 +103,7 @@ endpoints, and the intentionally absent application routes.
    `src/styles.css` when needed.
 5. Add routes under `src/routes/` with TanStack Router's file-route
    convention. Add matching English and `/zh` routes, localized metadata, and
-   messages when a page needs to be bilingual.
+   messages when a page needs localized content.
 
 Locale JSON files are the source of truth. Never edit
 `src/locale/paraglide/` by hand; regenerate it after changing copy:

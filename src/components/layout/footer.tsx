@@ -14,7 +14,7 @@ export function Footer({ locale }: { locale: AppLocale }) {
           </div>
           <p className="text-paper/75">{message('footer_tagline', locale)}</p>
         </div>
-        <p className="border-t-2 border-paper/20 pt-5 text-sm font-bold text-paper/65 sm:border-t-0 sm:pt-0 sm:text-right">
+        <p className="border-t-2 border-paper/20 pt-5 text-sm text-paper/65 sm:border-t-0 sm:pt-0 sm:text-right">
           © {websiteConfig.name} {new Date().getFullYear()}
           {locale === 'zh' ? '。' : '. '}
           {message('footer_rights', locale)}

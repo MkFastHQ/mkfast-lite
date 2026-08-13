@@ -9,14 +9,14 @@ import { type AppLocale, message } from '@/lib/locale';
 
 const technologies = [
   ['react', IconBrandReact, 'bg-cyan'],
-  ['tanstack', IconStack2, 'bg-orange'],
-  ['i18n', IconLanguage, 'bg-green'],
-  ['cloudflare', IconBrandCloudflare, 'bg-yellow'],
+  ['tanstack', IconStack2, 'bg-lavender'],
+  ['i18n', IconLanguage, 'bg-yellow'],
+  ['cloudflare', IconBrandCloudflare, 'bg-orange'],
 ] as const;
 
 export function Stack({ locale }: { locale: AppLocale }) {
   return (
-    <Section id="stack" className="bg-lavender text-ink">
+    <Section id="stack" className="bg-green text-ink">
       <Container>
         <div className="max-w-3xl">
           <h2 className="text-balance text-4xl font-black leading-[1.1] tracking-[-0.03em] sm:text-5xl">
