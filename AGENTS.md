@@ -1,4 +1,4 @@
-# MkFast Lite agent guide
+# Tanstarter Lite agent guide
 
 ## Purpose
 

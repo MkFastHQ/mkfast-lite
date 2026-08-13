@@ -2,7 +2,7 @@
 
 ## Direction
 
-MkFast Lite uses an original workshop-poster form of neo-brutalism: a warm
+TanStarter Lite uses an original workshop-poster form of neo-brutalism: a warm
 paper-like canvas, dense black construction lines, offset printed color fields,
 and components that look assembled rather than polished into anonymity. Dark
 mode inverts the workshop into a late-night build desk without turning neon.

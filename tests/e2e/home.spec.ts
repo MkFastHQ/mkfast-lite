@@ -41,7 +41,7 @@ test.describe('simple landing page', () => {
     await expect(page.locator('#faq')).toBeVisible();
     await expect(
       page.getByText(
-        `© ${new Date().getFullYear()} MkFast Lite. All rights reserved.`
+        `© TanStarter Lite ${new Date().getFullYear()}. All rights reserved.`
       )
     ).toBeVisible();
   });
@@ -65,7 +65,7 @@ test.describe('simple landing page', () => {
     await expect(page.getByText('结构完整的落地页')).toBeVisible();
     await expect(
       page.getByText(
-        `© ${new Date().getFullYear()} MkFast Lite。保留所有权利。`
+        `© TanStarter Lite ${new Date().getFullYear()}。保留所有权利。`
       )
     ).toBeVisible();
   });
@@ -78,15 +78,15 @@ test.describe('simple landing page', () => {
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
     await expect(page.locator('#stack')).toHaveCSS(
       'background-color',
-      'rgb(168, 220, 115)'
+      'rgb(196, 183, 242)'
     );
     await expect(page.locator('#architecture')).toHaveCSS(
       'background-color',
-      'rgb(255, 222, 89)'
+      'rgb(255, 216, 74)'
     );
     await expect(page.locator('#faq')).toHaveCSS(
       'background-color',
-      'rgb(196, 183, 242)'
+      'rgb(168, 220, 115)'
     );
     await theme.click();
     await page.getByRole('menuitemradio', { name: 'Dark' }).click();
@@ -132,7 +132,7 @@ test.describe('simple landing page', () => {
   test('opens one FAQ answer at a time', async ({ page }) => {
     await page.goto('/');
     const firstQuestion = page.getByRole('button', {
-      name: /Is MkFast Lite a SaaS starter/i,
+      name: /Is TanStarter Lite a SaaS starter/i,
     });
     const secondQuestion = page.getByRole('button', {
       name: /Can I add more pages/i,
@@ -178,7 +178,7 @@ test.describe('simple landing page', () => {
       page.getByRole('heading', { name: '这里没有页面。' })
     ).toBeVisible();
     await expect(
-      page.getByText('MkFast Lite 默认只提供一个简单的落地页。')
+      page.getByText('TanStarter Lite 默认只提供一个简单的落地页。')
     ).toBeVisible();
   });
 
@@ -195,6 +195,6 @@ test.describe('simple landing page', () => {
 
     const manifest = await request.get('/manifest.webmanifest');
     expect(manifest.ok()).toBe(true);
-    expect((await manifest.json()).name).toBe('MkFast Lite');
+    expect((await manifest.json()).name).toBe('TanStarter Lite');
   });
 });

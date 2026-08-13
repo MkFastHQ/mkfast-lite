@@ -80,7 +80,7 @@ function NotFound() {
 function RootDocument({ children }: { children: React.ReactNode }) {
   const pathname = useLocation({ select: (location) => location.pathname });
   const locale = currentLocale(pathname);
-  const themeScript = `(()=>{try{const t=localStorage.getItem('mkfast-lite-theme')||'system';const d=t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme:dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=d?'dark':'light'}catch{}})()`;
+  const themeScript = `(()=>{try{const t=localStorage.getItem('tanstarter-lite-theme')||'system';const d=t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme:dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=d?'dark':'light'}catch{}})()`;
   return (
     <html lang={localeMeta[locale].hreflang} suppressHydrationWarning>
       <head>

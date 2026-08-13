@@ -6,13 +6,13 @@
   <g fill="#171313" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-weight="800">
     <rect x="80" y="109" width="31" height="31" rx="8" fill="#ff6038" stroke="#171313" stroke-width="2"/>
     <path d="M99 115 88.6 129.5h6.5l-2.7 8.7L103 123.7h-6.5l2.5-8.7Z"/>
-    <text x="123" y="133" font-size="22">MkFast Lite</text>
+    <text x="123" y="133" font-size="22">TanStarter Lite</text>
   </g>
 
   <!-- Left: current hero copy and actions. -->
   <g font-family="Arial Rounded MT Bold,Arial,sans-serif">
-    <text x="80" y="230" fill="#171313" font-size="67" font-weight="900" letter-spacing="-2">A smaller start</text>
-    <text x="80" y="305" fill="#ff6038" font-size="67" font-weight="900" letter-spacing="-2">A faster site</text>
+    <text x="80" y="230" fill="#171313" font-size="67" font-weight="900" letter-spacing="-2">Smaller starter</text>
+    <text x="80" y="305" fill="#ff6038" font-size="67" font-weight="900" letter-spacing="-2">Faster website</text>
     <g fill="#62594d" font-size="17" font-weight="700">
       <text x="81" y="357">A bilingual starter with dark mode, SEO, tests, and</text>
       <text x="81" y="384">one-command Cloudflare Workers deployment.</text>
@@ -48,7 +48,7 @@
       <text x="601" y="363">2</text><text x="634" y="363">English + Chinese</text><text x="1073" y="363">✓</text>
       <text x="601" y="416">3</text><text x="634" y="416">Light / dark theme</text><text x="1073" y="416">✓</text>
     </g>
-    <rect x="578" y="453" width="524" height="56" rx="7" fill="#ff6038"/>
+    <rect x="578" y="453" width="524" height="56" rx="7" fill="#a8dc73"/>
     <text x="603" y="489" fill="#171313" font-size="17" font-weight="700">pnpm deploy</text>
     <text x="968" y="489" fill="#171313" font-size="16" font-weight="700">→ workers.dev</text>
   </g>

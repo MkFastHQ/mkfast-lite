@@ -1,4 +1,4 @@
-<h1 align="center">MkFast Lite</h1>
+<h1 align="center">TanStarter Lite</h1>
 
 <p align="center">
   A bilingual starter for a simple, fast public website.
@@ -11,18 +11,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MkFastHQ/mkfast-lite">GitHub</a> ·
   <a href="#getting-started">Quick Start</a> ·
   <a href="#customize-the-template">Customize</a> ·
   <a href="#deploy-to-cloudflare-workers">Deploy</a>
 </p>
 
-[![MkFast Lite preview](./public/og.png)](https://github.com/MkFastHQ/mkfast-lite)
+[![TanStarter Lite preview](./public/og.png)](https://github.com/MkFastHQ/mkfast-lite)
 
-MkFast Lite is an open-source, deliberately small starter for a bilingual
-public website. It provides a complete English and Simplified Chinese landing
-page, light/dark/system themes, SEO endpoints, tests, and Cloudflare Workers
-deployment—without the operational surface of a SaaS starter.
+TanStarter Lite is the lite version of TanStarter: an open-source, deliberately
+small starter for a bilingual public website. It provides a complete English
+and Simplified Chinese landing page, light/dark/system themes, SEO endpoints,
+tests, and Cloudflare Workers deployment—without the operational surface of a
+SaaS starter.
 
 It intentionally does not include authentication, payments, persistence,
 storage, cache, transactional email, newsletters, or an admin surface. Add
@@ -141,8 +141,8 @@ To attach a hostname without making it the template default:
 pnpm exec wrangler deploy --domain your-site.example.com
 ```
 
-Do not commit personal domains, account IDs, tokens, or secrets to a project
-created from this template.
+Do not commit personal account IDs, tokens, or secrets to a project created
+from this template.
 
 ## Project map
 
@@ -171,9 +171,6 @@ pnpm build
 pnpm e2e
 git diff --check
 ```
-
-Use [GitHub Issues](https://github.com/MkFastHQ/mkfast-lite/issues) for bugs,
-feature requests, and questions about the template.
 
 ## Links
 

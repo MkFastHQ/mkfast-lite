@@ -1,5 +1,5 @@
 export const websiteConfig = {
-  name: 'MkFast Lite',
+  name: 'TanStarter Lite',
   repository: 'https://github.com/MkFastHQ/mkfast-lite',
   defaultTheme: 'system' as const,
   navigation: [

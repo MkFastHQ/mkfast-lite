@@ -3,7 +3,7 @@ import { websiteConfig } from '@/config/website';
 import { localeMeta, localizedPath, message } from '@/lib/locale';
 import { cn } from '@/lib/utils';
 
-describe('MkFast Lite core contracts', () => {
+describe('TanStarter Lite core contracts', () => {
   it('uses localized simple home paths', () => {
     expect(localizedPath('en')).toBe('/');
     expect(localizedPath('zh')).toBe('/zh');
@@ -18,7 +18,7 @@ describe('MkFast Lite core contracts', () => {
   });
 
   it('keeps the repository as the only external destination', () => {
-    expect(websiteConfig.name).toBe('MkFast Lite');
+    expect(websiteConfig.name).toBe('TanStarter Lite');
     expect(websiteConfig.repository).toBe(
       'https://github.com/MkFastHQ/mkfast-lite'
     );

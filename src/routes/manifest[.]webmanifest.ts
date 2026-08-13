@@ -5,8 +5,8 @@ export const Route = createFileRoute('/manifest.webmanifest')({
     handlers: {
       GET: () =>
         Response.json({
-          name: 'MkFast Lite',
-          short_name: 'MkFast Lite',
+          name: 'TanStarter Lite',
+          short_name: 'TanStarter Lite',
           start_url: '/',
           display: 'standalone',
           background_color: '#fff8e8',

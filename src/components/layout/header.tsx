@@ -1,8 +1,8 @@
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
-import { Logo } from '@/components/shared/logo';
 import { ThemeSwitcher } from '@/components/layout/theme-switcher';
+import { Logo } from '@/components/shared/logo';
 import { Button } from '@/components/ui/button';
 import { ButtonLink, Container } from '@/components/ui/primitives';
 import { websiteConfig } from '@/config/website';
@@ -33,7 +33,7 @@ export function Header({ locale }: { locale: AppLocale }) {
           >
             <Logo />
             <span className="text-xl font-black tracking-[-0.02em]">
-              MkFast Lite
+              {websiteConfig.name}
             </span>
           </a>
 

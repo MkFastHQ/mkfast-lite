@@ -33,7 +33,9 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('mkfast-lite-theme') as Theme | null;
+    const stored = localStorage.getItem(
+      'tanstarter-lite-theme'
+    ) as Theme | null;
     const initial = themes.some((item) => item.value === stored)
       ? (stored as Theme)
       : 'system';
@@ -51,7 +53,7 @@ export function ThemeSwitcher({ locale }: { locale: AppLocale }) {
 
   function selectTheme(next: Theme) {
     setTheme(next);
-    localStorage.setItem('mkfast-lite-theme', next);
+    localStorage.setItem('tanstarter-lite-theme', next);
     applyTheme(next);
   }
 
